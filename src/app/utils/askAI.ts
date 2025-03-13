@@ -55,7 +55,7 @@ export async function askAI(inputMessages: Message[] = []): Promise<Message> {
                     ...limitedMessages,
                 ],
             });
-        } catch (error) {
+        } catch {
             return {
                 role: "system",
                 content: "Oops! It looks like we've hit the rate limit. This may be due to excessive usage. Please try again later!"
@@ -66,7 +66,7 @@ export async function askAI(inputMessages: Message[] = []): Promise<Message> {
             content: response.choices[0].message.content as string
 
         };
-    } catch (e) {
+    } catch {
         return {
             role: "system",
             content: "Something's broken, I have no clue.\n¯\\_(ツ)_/¯"

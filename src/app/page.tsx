@@ -7,7 +7,7 @@ export default function Home() {
     <section className="flex flex-col items-center justify-center h-full p-20">
       <div className="flex flex-col items-center justify-center h-full text-center px-6 pt-10">
         <h1 className="text-4xl md:text-5xl font-bold text-white">
-          Hi, I'm <span className="text-blue-300">Huy</span>
+          Hi, I&apos;m <span className="text-blue-300">Huy</span>
         </h1>
         <h2 className="text-xl md:text-2xl text-gray-500 mt-2">
           A young and passionate developer from Vietnam
