@@ -12,7 +12,7 @@ export default function Contact() {
     return (
         <>
             {/* Mobile View: Collapsible Sidebar */}
-            <div id="contact" className="md:hidden bg-gray-900 text-white p-4 shadow-lg">
+            <div className="md:hidden bg-gray-900 text-white p-4 shadow-lg">
                 <button
                     onClick={() => setIsOpen(!isOpen)}
                     className="w-full flex items-center justify-between bg-gray-800 px-4 py-2 rounded-md"

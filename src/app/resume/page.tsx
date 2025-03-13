@@ -2,15 +2,13 @@ const Resume = () => {
     const cvUrl = "/Developer_HuyTran.pdf"; // Public folder reference
 
     return (
-        <section className="h-full w-full">
+        <section className="flex grow w-full h-full md:p-0 p-4 bg-white">
             {/* Display PDF using an embed element */}
-            <div className="w-full h-full border border-gray-700 rounded-lg overflow-hidden">
-                <embed 
+            <embed 
                     src={cvUrl} 
                     type="application/pdf" 
-                    className="w-full h-full"
+                    className="w-full grow"
                 />
-            </div>
         </section>
     );
 };

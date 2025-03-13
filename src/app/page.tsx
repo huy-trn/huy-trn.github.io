@@ -4,8 +4,8 @@ import Typewriter from "typewriter-effect";
 
 export default function Home() {
   return (
-    <section className="flex flex-col items-center justify-center h-full p-20">
-      <div className="flex flex-col items-center justify-center h-full text-center px-6 pt-10">
+    <section className="grow flex flex-col items-center justify-center h-full md:p-10 p-2">
+      <div className="flex flex-col items-center justify-center h-full text-center">
         <h1 className="text-4xl md:text-5xl font-bold text-white">
           Hi, I&apos;m <span className="text-blue-300">Huy</span>
         </h1>

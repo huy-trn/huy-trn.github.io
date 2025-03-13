@@ -8,8 +8,7 @@ const navLinks = [
   { name: "About", path: "/", icon: <Home size={24} /> },
   { name: "Resume", path: "/resume", icon: <User size={24} /> },
   { name: "Showcase", path: "/showcase", icon: <Briefcase size={24} /> },
-  { name: "Contact", path: "/#contact", icon: <Mail size={24} /> }
-];
+ ];
 
 const MobileNavbar = () => {
   const pathname = usePathname();

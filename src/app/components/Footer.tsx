@@ -1,6 +1,6 @@
     const Footer = () => {
         return (
-            <footer className="md:fixed md:bottom-0 w-full text-white text-center py-4">
+            <footer className="w-screen md:fixed md:left-0 md:bottom-0 text-white text-center py-4">
                 <p className="text-sm text-gray-400">
                     Designed & developed by <a
                         href="https://github.com/huy-trn/huy-trn.github.io"

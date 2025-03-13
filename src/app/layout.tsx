@@ -22,20 +22,20 @@ export default function RootLayout({
         <div className="md:p-7 md:pb-17 h-screen md:flex md:flex-row">
           <Contact />
           {/* Main Content */}
-          <div className="flex flex-col flex-grow h-full">
+          <div className="flex flex-grow flex-col min-h-full">
             <Navbar />
-            <main className="flex-grow overflow-auto bg-gray-900 shadow-md">
+            <main className="flex flex-col grow md:pb-0 pb-15 overflow-auto md:bg-gray-900 rounded-lg shadow-lg">
               {children}
+              <Footer />
             </main>
           </div>
         </div>
         {/* Mobile Navbar (Fixed at Bottom) */}
         <MobileNavbar />
-        <Footer />
         <Chatbot />
         <Analytics />
+        <Background />
       </body>
-      <Background />
     </html>
   );
 }

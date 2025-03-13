@@ -22,7 +22,7 @@ const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="w-full bg-gray-900 border-b border-blue-600 shadow-md hidden md:block">
+    <nav className="rounded-lg shadow-lg mb-2 w-full bg-gray-900 border-b border-blue-600 shadow-md hidden md:block">
       <div className="container mx-auto flex justify-between items-center py-4 px-6">
         <h2 className="text-2xl font-bold text-blue-400">{getTitle(pathname)}</h2>
         {/* Desktop Menu */}
