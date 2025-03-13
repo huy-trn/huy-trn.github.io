@@ -4,6 +4,7 @@ import OpenAI from "openai";
 import Message from "./Message";
 import { initialMessages, initialTokenCount } from "./initialMessages";
 import { estimateTokenCount } from "./estimateTokenCount";
+
 const MAX_TOKENS = 8000;
 const MODEL = "llama-3.3-70b-versatile";
 const openai = new OpenAI({
@@ -20,7 +21,7 @@ const limitMessages = (inputMessages: Message[], maxTokens: number) => {
     if (totalTokens + lastMessageTokenCount > maxTokens) {
         return reversedMessages;
     }
-    totalTokens+=lastMessageTokenCount;
+    totalTokens += lastMessageTokenCount;
     reversedMessages.push(inputMessages[inputMessages.length - 1])
 
     // From last assistant's message
@@ -35,22 +36,42 @@ const limitMessages = (inputMessages: Message[], maxTokens: number) => {
     return reversedMessages.reverse();
 }
 
-export async function askAI(inputMessages: Message[] = []): Promise<string> {
+export async function askAI(inputMessages: Message[] = []): Promise<Message> {
     try {
-        const limitedMessages = limitMessages(inputMessages, MAX_TOKENS - 500); // Leave buffer for response tokens
-        if (limitMessages.length === 0) {
-            return "Error: Max token length exceeded.";
+        const limitedMessages = limitMessages(inputMessages, MAX_TOKENS - 500) || []; // Leave buffer for response tokens
+        if (limitedMessages.length < 1) {
+            return {
+                role: "system",
+                content: "Your input is too long. Try asking a shorter question!"
+            }
         }
-        const response = await openai.chat.completions.create({
-            model: MODEL,
-            messages: [
-                ...initialMessages,
-                ...limitedMessages,
-            ],
-        });
-        return response.choices?.[0]?.message?.content || "No response received.";
-    } catch (error) {
-        console.error("Error fetching AI response:", error);
-        return "Error: Could not process request.";
+
+        let response;
+        try {
+            response = await openai.chat.completions.create({
+                model: MODEL,
+                messages: [
+                    ...initialMessages,
+                    ...limitedMessages,
+                ],
+            });
+        } catch (error) {
+            return {
+                role: "system",
+                content: "Oops! It looks like we've hit the rate limit. This may be due to excessive usage. Please try again later!"
+            }
+        }
+        return {
+            role: "assistant",
+            content: response.choices[0].message.content as string
+
+        };
+    } catch (e) {
+        return {
+            role: "system",
+            content: "Something's broken, I have no clue.\n¯\\_(ツ)_/¯"
+        };
     }
 }
+
+

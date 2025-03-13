@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import MobileNavbar from "./components/MobileNavbar";
 import Footer from "./components/Footer";
 import Chatbot from "./components/Chatbot";
+import Background from "./components/Background";
+import Contact from "./components/Contact";
 
 export const metadata: Metadata = {
   title: "Tran Quoc Huy",
@@ -14,12 +17,23 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className="min-h-screen flex flex-col bg-gray-900 text-gray-100">
-        <Navbar />
-        <Chatbot />
-        <main className="flex-grow">{children}</main>
+      <body className="text-gray-100">
+        <div className="md:p-7 md:pb-17 h-screen md:flex md:flex-row">
+          <Contact />
+          {/* Main Content */}
+          <div className="flex flex-col flex-grow h-full">
+            <Navbar />
+            <main className="flex-grow overflow-auto bg-gray-900 shadow-md">
+              {children}
+            </main>
+          </div>
+        </div>
+        {/* Mobile Navbar (Fixed at Bottom) */}
+        <MobileNavbar />
         <Footer />
+        <Chatbot />
       </body>
+      <Background />
     </html>
   );
 }
