@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, User, Briefcase, Mail } from "lucide-react"; // Using Lucide Icons
+import { Home, User, Briefcase } from "lucide-react"; // Using Lucide Icons
 
 const navLinks = [
   { name: "About", path: "/", icon: <Home size={24} /> },
