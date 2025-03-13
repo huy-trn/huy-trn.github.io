@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import { Analytics } from "@vercel/analytics/react"
 import Navbar from "./components/Navbar";
 import MobileNavbar from "./components/MobileNavbar";
 import Footer from "./components/Footer";
 import Chatbot from "./components/Chatbot";
 import Background from "./components/Background";
 import Contact from "./components/Contact";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Tran Quoc Huy",
@@ -32,6 +33,7 @@ export default function RootLayout({
         <MobileNavbar />
         <Footer />
         <Chatbot />
+        <Analytics />
       </body>
       <Background />
     </html>

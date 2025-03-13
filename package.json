@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@vercel/analytics": "^1.5.0",
     "autoprefixer": "^10.4.20",
     "dompurify": "^3.2.4",
     "llama-tokenizer-js": "^1.2.2",
