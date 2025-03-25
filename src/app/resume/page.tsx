@@ -36,7 +36,8 @@ const Resume = () => {
     return (
         <section className="flex flex-col grow w-full h-full p-4" ref={setContainerRef} >
             {/* Display PDF using an embed element */}
-            <Document file={CV_URL}
+            <Document 
+                file={CV_URL}
                 options={PDF_OPTIONS}
                 onLoadSuccess={onDocumentLoadSuccess}>
                 {Array.from(new Array(numPages), (_el, index) => (

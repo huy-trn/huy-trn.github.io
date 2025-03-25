@@ -5,7 +5,6 @@ import { Send, MessageCircle, X } from "lucide-react";
 import Message from "../utils/Message";
 import { askAI } from "../utils/askAI";
 import ChatMessages from "./ChatMessages";
-
 const Chatbot = () => {
     const [messages, setMessages] = useState<Message[]>([]);
     const [input, setInput] = useState("");
@@ -20,13 +19,6 @@ const Chatbot = () => {
         "Can you explain how this chatbot works?",
     ];
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setShowBubble(false);
-        }, 15000);
-        return () => clearTimeout(timer);
-    }, []);
-
     const sendMessage = async (msg?: string) => {
         if (!msg && !input.trim()) return;
 
@@ -39,10 +31,17 @@ const Chatbot = () => {
         setLoading(false);
     };
 
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setShowBubble(false);
+        }, 15000);
+        return () => clearTimeout(timer);
+    }, []);
+
     return (
         <>
             {!chatOpen ? (
-                <div className="fixed bottom-6 right-6 bottom-20 md:right-16 flex flex-col items-end">
+                <div className="z-100 fixed bottom-6 right-6 bottom-20 md:right-16 flex flex-col items-end">
                     {showBubble && (
                         <div className="relative bg-white text-black p-4 rounded-xl mb-4 max-w-sm text-sm md:text-base shadow-lg">
                             <p>
@@ -63,7 +62,7 @@ const Chatbot = () => {
                     </button>
                 </div>
             ) : (
-                <div className="fixed inset-0 flex items-center justify-center">
+                <div className="z-100 fixed inset-0 flex items-center justify-center">
                     <div onClick={() => setChatOpen(false)} className="absolute inset-0 bg-gray/50 backdrop-blur-lg transition-opacity"></div>
                     <div className="flex flex-col justify-between relative z-10 w-[95vw] md:w-[70vw] lg:w-[65vw] xl:w-[60vw] h-[70vh] md:h-[75vh] bg-gray-900 border border-gray-700 rounded-2xl shadow-2xl overflow-hidden">
                         <div className="flex items-center justify-between bg-gray-800 p-4 border-b border-gray-700">

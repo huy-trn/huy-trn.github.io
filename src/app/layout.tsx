@@ -32,7 +32,7 @@ export default function RootLayout({
         </div>
         {/* Mobile Navbar (Fixed at Bottom) */}
         <MobileNavbar />
-        <Chatbot />
+        <Chatbot/>
         <Analytics />
         <Background />
       </body>
