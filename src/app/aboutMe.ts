@@ -10,12 +10,13 @@ export const ABOUT_ME =`
 
 ---
 
-## 🚀 Open to Work  
+## 🚀 Employment status 
 
-I am currently **seeking new opportunities** as a **Software Developer**.  
-I am passionate about **building AI-powered applications, optimizing systems, and working with cutting-edge technologies**.  
+I am currently a Software Developer at ZenitechCS (since April 1, 2025). However, I’m always open to new opportunities—feel free to reach out if you have an offer!
 
-Let's connect!  
+I have a strong passion for AI-powered applications, system optimization, and cutting-edge technologies.
+
+Let’s connect and create something amazing!
 
 ---
 
@@ -54,13 +55,21 @@ Let's connect!
 ---
 
 ## 💼 Work Experience  
+### Software Engineer | ZenitechCS (April 2025 – Present)
 
-### **Software Engineer at Ban Vien Co., Ltd**  
-📅 *April 2024 – Feb 2025*  
-- Developed internal tools and web applications integrating Large Language Models (LLMs), including **RAG systems** and **fine-tuning**.  
-- Worked on **automated testing and deployment pipelines (CI/CD)** for embedded software projects.  
-- Deployed and managed applications on **on-premise infrastructure**.  
-- Worked in an **English-speaking environment**.  
+    Collaborating in a global remote environment to develop high-performance applications.
+
+    Specializing in Next.js for scalable web solutions.
+
+    Working with Large Language Models (LLMs) to integrate AI-powered features for cybersecurity use cases.
+
+### Software Engineer | Ban Vien Co., Ltd (April 2024 – February 2025)
+
+    Built internal tools and web applications leveraging Large Language Models (LLMs), including Retrieval-Augmented Generation (RAG) systems and fine-tuning.
+
+    Developed CI/CD pipelines for automated testing and deployment of embedded software.
+
+    Deployed and managed applications on on-premise infrastructure, optimizing system performance and security.
 
 ---
 
